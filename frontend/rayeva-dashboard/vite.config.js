@@ -11,9 +11,7 @@ export default defineConfig({
    css: {
     postcss: path.resolve(__dirname, 'postcss.config.cjs'), // ensures PostCSS config is picked
   },
-  build: {
-    rollupOptions: {
-      external: ["prop-types"], // ignore prop-types in build
-    },
+  optimizeDeps: {
+    include: ["prop-types"], // pre-bundle prop-types for browser
   },
 })
