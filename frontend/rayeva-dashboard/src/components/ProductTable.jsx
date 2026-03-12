@@ -2,8 +2,6 @@
 
 import React from "react";
 import { Tag, Layers, Box, Star, Edit2 } from "lucide-react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-
 export default function ProductTable({ products = [], search = "", onEdit, onDelete }) {
 
   const onDragEnd = (result) => {
