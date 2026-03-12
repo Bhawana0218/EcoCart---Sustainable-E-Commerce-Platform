@@ -1,0 +1,8 @@
+# Ignore environment variables
+.env
+
+# Ignore node_modules (if this is a Node.js backend)
+node_modules/
+
+# Ignore log files
+*.log".env" 
