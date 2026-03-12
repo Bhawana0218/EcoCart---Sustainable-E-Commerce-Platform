@@ -16,6 +16,7 @@
     "axios": "^1.13.6",
     "lucide-react": "^0.577.0",
     "postcss": "^8.5.8",
+    "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-csv": "^2.2.2",
     "react-dom": "^19.2.0",
