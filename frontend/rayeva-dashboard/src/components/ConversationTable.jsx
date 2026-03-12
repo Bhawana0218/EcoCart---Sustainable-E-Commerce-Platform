@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import api from "../api/api";
 import { io } from "socket.io-client";
 import { Send } from "lucide-react";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const socket = io("https://ecocart-sustainable-e-commerce-platform-1.onrender.com/api", {
   transports: ["websocket"], 
