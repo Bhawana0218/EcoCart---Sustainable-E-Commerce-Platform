@@ -16,7 +16,9 @@ export default function Conversations() {
    // Connect socket
   useEffect(() => {
 
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io(import.meta.env.VITE_BACKEND_URL, {
+  transports: ["websocket"]
+});
 
     socketRef.current.on("newConversation", (conversation) => {
       setConversations((prev) => [...prev, conversation]);
@@ -29,7 +31,7 @@ export default function Conversations() {
   // Fetch initial messages
   const fetchConversations = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/whatsapp");
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/whatsapp`);
       setConversations(res.data.reverse()); // latest at bottom
     } catch (err) {
       console.error(err);
@@ -53,10 +55,10 @@ export default function Conversations() {
 
   try {
 
-    await axios.post("http://localhost:5000/api/whatsapp/whatsapp", {
-      phone: "1234567890",
-      message: inputMessage
-    });
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/whatsapp/whatsapp`, {
+  phone: "1234567890",
+  message: inputMessage
+}),
 
     setInputMessage("");
 

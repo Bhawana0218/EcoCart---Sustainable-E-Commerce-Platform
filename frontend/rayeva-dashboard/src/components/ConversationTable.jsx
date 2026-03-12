@@ -4,7 +4,7 @@ import api from "../api/api";
 import { io } from "socket.io-client";
 import { Send } from "lucide-react";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://ecocart-sustainable-e-commerce-platform-1.onrender.com/api", {
   transports: ["websocket"], 
 });
 
